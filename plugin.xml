@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="ru.isys.cordova.plugins"
+        version="0.7.0">
+
+    <name>ScreenWatcher</name>
+
+    <engines>
+        <engine name="cordova" version=">=3.4.0"/>
+    </engines>
+
+    <asset src="www/screenwatcher.js" target="js/screenwatcher.js"/>
+
+    <js-module src="www/screenwatcher.js" name="hello">
+        <clobbers target="hello" />
+    </js-module>
+
+    <platform name="android">
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="ScreenWatcher">
+                <param name="android-package" value="ru.isys.cordova.plugins.ScreenWatcher"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/ScreenWatcher.java" target-dir="src/ru/isys/cordova/plugins/"/>
+    </platform>
+
+</plugin>
